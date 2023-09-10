@@ -23,8 +23,9 @@ export function summaryPlugin({ includeSize = false } = {}): esbuild.Plugin {
       build.onEnd((result) => {
         const duration = Date.now() - startTime;
         if (result.errors.length > 0) return; // Skip summary if errored
+        console.log("");
         if (includeSize) printOutputs(result.metafile!);
-        console.log(`\n⚡ ${chalk.green("Done in %sms")}`, duration);
+        console.log(`⚡ ${chalk.green("Done in %sms")}\n`, duration);
       });
     },
   };
@@ -38,6 +39,7 @@ function printOutputs(metafile: esbuild.Metafile) {
         .map(([path, { bytes }]) => ["", formatPath(path), formatSize(bytes)]),
       { showHeaders: false, paddingChr: "  " },
     ),
+    "\n",
   );
 }
 
@@ -49,5 +51,5 @@ function formatSize(bytes: number): string {
 
 function formatPath(path: string): string {
   const p = parse(path);
-  return `${p.dir}${sep}${chalk.white(p.base)}`;
+  return `${p.dir || "."}${sep}${chalk.white(p.base)}`;
 }
