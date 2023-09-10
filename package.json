@@ -1,6 +1,6 @@
 {
   "name": "esbuild-plugin-summary",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "esbuild plugin for showing build summary: time and size",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
