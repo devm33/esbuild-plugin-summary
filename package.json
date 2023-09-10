@@ -1,0 +1,42 @@
+{
+  "name": "esbuild-plugin-summary",
+  "version": "0.0.1",
+  "description": "esbuild plugin for showing build summary: time and size",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "prettier --check .",
+    "format": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devm33/esbuild-plugin-summary.git"
+  },
+  "keywords": [
+    "esbuild",
+    "plugin",
+    "time",
+    "filesize"
+  ],
+  "author": "devm33",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devm33/esbuild-plugin-summary/issues"
+  },
+  "homepage": "https://github.com/devm33/esbuild-plugin-summary#readme",
+  "devDependencies": {
+    "@types/columnify": "^1.5.2",
+    "@types/node": "^20.6.0",
+    "prettier": "3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "columnify": "^1.6.0",
+    "pretty-bytes": "^6.1.1"
+  },
+  "peerDependencies": {
+    "esbuild": ">=0.19.2"
+  }
+}
